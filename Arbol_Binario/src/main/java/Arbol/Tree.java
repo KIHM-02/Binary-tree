@@ -36,21 +36,60 @@ public class Tree
         return root;
     }
 
-    public void preOrderAccessLeft()
+    public void ordenAccess(int option)
     {
-        preOrdenLeft(this.root);
+        switch (option)
+        {
+            case 1:
+                preOrden(this.root);
+                break;
+
+            case 2:
+                postOrden(this.root);
+                break;
+
+            case 3:
+                inOrden(this.root);
+                break;
+        }
     }
 
-    public void preOrdenLeft(Nodo root)
+    public void preOrden(Nodo root)
     {
         System.out.print(root.getValue()+", ");
         if (root.getLeft() != null)
         {
-            preOrdenLeft(root.getLeft());
+            preOrden(root.getLeft());
         }
         if(root.getRight() != null)
         {
-            preOrdenLeft(root.getRight());
+            preOrden(root.getRight());
+        }
+    }
+
+    public void postOrden(Nodo root)
+    {
+        if (root.getLeft() != null)
+        {
+            postOrden(root.getLeft());
+        }
+        if(root.getRight() != null)
+        {
+            postOrden(root.getRight());
+        }
+        System.out.print(root.getValue()+", ");
+    }
+
+    public void inOrden(Nodo root)
+    {
+        if(root.getLeft() != null)
+        {
+            inOrden(root.getLeft());
+        }
+        System.out.print(root.getValue()+", ");
+        if(root.getRight() != null)
+        {
+            inOrden(root.getRight());
         }
     }
 }

@@ -1,5 +1,4 @@
 package Arbol;
-import java.util.Scanner;
 
 public class Main
 {
@@ -10,6 +9,10 @@ public class Main
         tree.addNode(6);
         tree.addNode(4);
 
-        tree.preOrderAccessLeft();
+        tree.ordenAccess(1);
+        System.out.println("\n");
+        tree.ordenAccess(2);
+        System.out.println("\n");
+        tree.ordenAccess(3);
     }
 }
