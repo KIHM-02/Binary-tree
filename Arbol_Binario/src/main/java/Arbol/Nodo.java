@@ -3,11 +3,13 @@ package Arbol;
 public class Nodo
 {
     private int value;
+    private String color;
     private Nodo left, right;
 
-    public Nodo(int value)
+    public Nodo(int value, String color)
     {
         this.value = value;
+        this.color = color;
         left = null;
         right = null;
     }
@@ -16,8 +18,12 @@ public class Nodo
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public Nodo getLeft() {
